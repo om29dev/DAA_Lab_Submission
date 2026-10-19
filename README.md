@@ -26,6 +26,7 @@ This repository contains the laboratory assignments, implementations, outputs, a
 | **5** | [Multistage Graph Delivery Optimization](./Assignment%205) | Dynamic Programming (Backward DP) | [`multistage_graph_dp.cpp`](./Assignment%205/multistage_graph_dp.cpp) | [Assignment 5 PDF](./Assignment%205/124B1F001_DAA_Assignment_5_Multistage_Graph.pdf) |
 | **6** | [Disaster Relief Resource Allocation](./Assignment%206) | Dynamic Programming (0/1 Knapsack) | [`disaster_relief_knapsack.cpp`](./Assignment%206/disaster_relief_knapsack.cpp) | [Assignment 6 PDF](./Assignment%206/124B1F001_DAA_Assignment_6_Disaster_Relief_Knapsack.pdf) |
 | **7** | [University Timetable Scheduling](./Assignment%207) | Backtracking / Graph Colouring | [`exam_timetable_graph_colouring.cpp`](./Assignment%207/exam_timetable_graph_colouring.cpp) | [Assignment 7 PDF](./Assignment%207/124B1F001_DAA_Assignment_7_University_Timetable_Scheduling.pdf) |
+| **8** | [Optimizing Delivery Routes for a Logistics Company](./Assignment%208) | LC Branch and Bound (Travelling Salesman Problem) | [`swiftship_delivery.cpp`](./Assignment%208/swiftship_delivery.cpp) | [Assignment 8 PDF](./Assignment%208/124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.pdf) |
 
 ---
 
@@ -72,5 +73,11 @@ DAA_Lab_Submission/
 │   ├── exam_timetable_graph_colouring.cpp
 │   ├── output.png
 │   └── README.md
+├── Assignment 8/
+│   ├── 124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.docx
+│   ├── 124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.pdf
+│   ├── output.png
+│   ├── README.md
+│   └── swiftship_delivery.cpp
 └── README.md
 ```
