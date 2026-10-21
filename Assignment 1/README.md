@@ -1,4 +1,4 @@
-﻿# Assignment 1: Merge Sort
+# Assignment 1: Merge Sort
 
 This folder contains the implementation, test output, and complete documentation for **Assignment No. 1: Customer Order Sorting using Merge Sort**.
 
@@ -12,8 +12,8 @@ Arrange customer orders efficiently based on order timestamps using the **Merge 
 
 | File | Description |
 | :--- | :--- |
-| [`customer_order_merge_sort.cpp`](./customer_order_merge_sort.cpp) | Complete C++ implementation of Merge Sort with timestamp ordering |
-| [`customer_orders.csv`](./customer_orders.csv) | Sample customer-order dataset containing order IDs, customer names, and timestamps |
+| [`customer_order_merge_sort.cpp`](./customer_order_merge_sort.cpp) | Complete C++ implementation of Merge Sort with CSV dataset parsing and timestamp ordering |
+| [`customer_orders.csv`](./customer_orders.csv) | E-commerce customer orders dataset containing order IDs, customer IDs, statuses, and purchase timestamps |
 | [`output.png`](./output.png) | Terminal execution output screenshot showing sorted customer order records |
 | [`124B1F001_DAA_Assignment_1_Merge_Sort.pdf`](./124B1F001_DAA_Assignment_1_Merge_Sort.pdf) | Complete lab report document formatted in institutional standard (PDF) |
 
@@ -36,14 +36,13 @@ g++ -O2 customer_order_merge_sort.cpp -o customer_order_merge_sort
 ./customer_order_merge_sort
 ```
 
-The sample records in [`customer_orders.csv`](./customer_orders.csv) can be entered
-when the program prompts for the number of orders. The CSV columns are:
+The program automatically reads and parses [`customer_orders.csv`](./customer_orders.csv) located in the current working directory. The dataset schema includes:
 
 ```text
-order_id,customer_name,timestamp
+order_id,customer_id,order_status,order_purchase_timestamp,order_approved_at,...
 ```
 
-The timestamp uses the `YYYYMMDDHHMM` format and is sorted in ascending order.
+The timestamps follow the standard ISO format (`YYYY-MM-DD HH:MM:SS`) and are sorted in chronological ascending order using Merge Sort ($O(n \log n)$). The top sorted records and total order counts are displayed in tabular format.
 
 ---
 
