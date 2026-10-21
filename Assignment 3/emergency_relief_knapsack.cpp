@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -8,8 +9,7 @@ using namespace std;
 
 struct Item {
     string name;
-    double weight;
-    double value;
+    double weight, value;
     bool divisible;
     int priority;
 
@@ -27,27 +27,28 @@ bool compare(const Item& a, const Item& b) {
     return a.valuePerWeight() > b.valuePerWeight();
 }
 
-double fractionalKnapsack(vector<Item>& items, double capacity, double& totalWeight) {
+double fractionalKnapsack(vector<Item>& items, double capacity,
+                          double& totalWeight, double& remainingCapacity) {
     sort(items.begin(), items.end(), compare);
 
     double totalValue = 0;
     totalWeight = 0;
+    remainingCapacity = capacity;
     int selectedCount = 0;
 
     cout << "\n========== SELECTED RELIEF ITEMS ==========\n";
 
     for (const auto& item : items) {
-        if (capacity <= 0)
+        if (remainingCapacity <= 0)
             break;
 
         double takenWeight = 0;
         double takenValue = 0;
 
         if (item.divisible) {
-            takenWeight = min(item.weight, capacity);
+            takenWeight = min(item.weight, remainingCapacity);
             takenValue = item.valuePerWeight() * takenWeight;
-        } 
-        else if (item.weight <= capacity) {
+        } else if (item.weight <= remainingCapacity) {
             takenWeight = item.weight;
             takenValue = item.value;
         }
@@ -55,7 +56,7 @@ double fractionalKnapsack(vector<Item>& items, double capacity, double& totalWei
         if (takenWeight > 0) {
             totalValue += takenValue;
             totalWeight += takenWeight;
-            capacity -= takenWeight;
+            remainingCapacity -= takenWeight;
             selectedCount++;
 
             cout << "\nItem           : " << item.name;
@@ -69,50 +70,73 @@ double fractionalKnapsack(vector<Item>& items, double capacity, double& totalWei
         }
     }
 
-    cout << "\nTotal Items Selected: " << selectedCount << endl;
-
+    cout << "\nTotal Items Selected: " << selectedCount << '\n';
     return totalValue;
 }
 
 int main() {
-    vector<Item> items = {
-        Item("Medical Kits", 10, 100, false, 1),
-        Item("Food Packets", 20, 60, true, 3),
-        Item("Drinking Water", 30, 90, true, 2),
-        Item("Blankets", 15, 45, false, 3),
-        Item("Infant Formula", 5, 50, false, 1)
-    };
-
+    int n;
     double capacity;
 
     cout << "========================================\n";
     cout << "     EMERGENCY RELIEF SUPPLY SYSTEM\n";
     cout << "========================================\n";
 
-    cout << "\nPriority Levels: 1 = High, 2 = Medium, 3 = Low\n";
-    cout << "Enter maximum boat capacity (kg): ";
-    cin >> capacity;
-
-    if (cin.fail() || capacity <= 0) {
-        cout << "Invalid capacity. Enter a positive number.\n";
+    cout << "Enter number of items: ";
+    if (!(cin >> n) || n <= 0) {
+        cout << "Invalid number of items.\n";
         return 1;
     }
 
-    double totalWeight;
-    double totalValue = fractionalKnapsack(items, capacity, totalWeight);
+    vector<Item> items;
+
+    cout << "\nEnter item details (Name Weight Value):\n";
+
+    for (int i = 0; i < n; i++) {
+        string name;
+        double weight, value;
+
+        if (!(cin >> name >> weight >> value) ||
+            weight <= 0 || value < 0) {
+            cout << "Invalid item details.\n";
+            return 1;
+        }
+
+        int priority;
+        bool divisible;
+
+        if (name == "Medical" || name == "Formula") {
+            priority = 1;
+            divisible = false;
+        } else if (name == "Water") {
+            priority = 2;
+            divisible = true;
+        } else {
+            priority = 3;
+            divisible = (name == "Food");
+        }
+
+        items.emplace_back(name, weight, value, divisible, priority);
+    }
+
+    cout << "Enter boat capacity: ";
+    if (!(cin >> capacity) || capacity <= 0) {
+        cout << "Invalid capacity.\n";
+        return 1;
+    }
+
+    double totalWeight, remainingCapacity;
+    double totalValue = fractionalKnapsack(
+        items, capacity, totalWeight, remainingCapacity
+    );
 
     cout << "\n========================================\n";
     cout << "               FINAL REPORT\n";
     cout << "========================================\n";
-
-    cout << "Total Weight Carried : " << fixed << setprecision(2)
-         << totalWeight << " kg\n";
-
-    cout << "Remaining Capacity   : " << capacity - capacity + 0
-         << " kg\n";
-
+    cout << fixed << setprecision(2);
+    cout << "Total Weight Carried : " << totalWeight << " kg\n";
+    cout << "Remaining Capacity   : " << remainingCapacity << " kg\n";
     cout << "Total Utility Value  : " << totalValue << " units\n";
-
     cout << "========================================\n";
 
     return 0;
