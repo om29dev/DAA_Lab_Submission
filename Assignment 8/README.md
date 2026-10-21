@@ -14,7 +14,6 @@ A leading logistics company, SwiftShip, is responsible for delivering packages t
 | :--- | :--- |
 | [`swiftship_delivery.cpp`](./swiftship_delivery.cpp) | Complete C++ implementation of LC Branch and Bound for TSP delivery route optimization |
 | [`output.png`](./output.png) | Terminal execution output screenshot showing cost matrix input and optimal delivery route |
-| [`124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.docx`](./124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.docx) | Word document report with institutional cover page and complete manual sections |
 | [`124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.pdf`](./124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.pdf) | Complete lab report document formatted in institutional standard (PDF) |
 
 ---

@@ -56,25 +56,21 @@ DAA_Lab_Submission/
 │   ├── output.png
 │   └── README.md
 ├── Assignment 5/
-│   ├── 124B1F001_DAA_Assignment_5_Multistage_Graph.docx
 │   ├── 124B1F001_DAA_Assignment_5_Multistage_Graph.pdf
 │   ├── multistage_graph_dp.cpp
 │   ├── output.png
 │   └── README.md
 ├── Assignment 6/
-│   ├── 124B1F001_DAA_Assignment_6_Disaster_Relief_Knapsack.docx
 │   ├── 124B1F001_DAA_Assignment_6_Disaster_Relief_Knapsack.pdf
 │   ├── disaster_relief_knapsack.cpp
 │   ├── output.png
 │   └── README.md
 ├── Assignment 7/
-│   ├── 124B1F001_DAA_Assignment_7_University_Timetable_Scheduling.docx
-│   ├── 124B1F001_DAA_Assignment_7_University_Timetable_Scheduling.pdf
+│   ├──124B1F001_DAA_Assignment_7_University_Timetable_Scheduling.pdf
 │   ├── exam_timetable_graph_colouring.cpp
 │   ├── output.png
 │   └── README.md
 ├── Assignment 8/
-│   ├── 124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.docx
 │   ├── 124B1F001_DAA_Assignment_8_Optimizing_Delivery_Routes_TSP.pdf
 │   ├── output.png
 │   ├── README.md
