@@ -13,6 +13,7 @@ Arrange customer orders efficiently based on order timestamps using the **Merge 
 | File | Description |
 | :--- | :--- |
 | [`customer_order_merge_sort.cpp`](./customer_order_merge_sort.cpp) | Complete C++ implementation of Merge Sort with timestamp ordering |
+| [`customer_orders.csv`](./customer_orders.csv) | Sample customer-order dataset containing order IDs, customer names, and timestamps |
 | [`output.png`](./output.png) | Terminal execution output screenshot showing sorted customer order records |
 | [`124B1F001_DAA_Assignment_1_Merge_Sort.pdf`](./124B1F001_DAA_Assignment_1_Merge_Sort.pdf) | Complete lab report document formatted in institutional standard (PDF) |
 
@@ -34,6 +35,15 @@ g++ -O2 customer_order_merge_sort.cpp -o customer_order_merge_sort
 # Run
 ./customer_order_merge_sort
 ```
+
+The sample records in [`customer_orders.csv`](./customer_orders.csv) can be entered
+when the program prompts for the number of orders. The CSV columns are:
+
+```text
+order_id,customer_name,timestamp
+```
+
+The timestamp uses the `YYYYMMDDHHMM` format and is sorted in ascending order.
 
 ---
 
